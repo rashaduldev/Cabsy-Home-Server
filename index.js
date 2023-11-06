@@ -32,6 +32,12 @@ async function run() {
     const database = client.db("serviceDB");
     const serviceCollaction = database.collection("service");
 
+// user read
+app.get("/services",async(req,res)=>{
+    const result=await serviceCollaction.find().toArray();
+    res.send(result);
+    console.log(result);
+  })
 
   // user create
   app.post("/services",async(req,res)=>{
