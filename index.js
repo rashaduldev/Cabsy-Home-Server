@@ -6,14 +6,14 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser')
 const app = express()
 const port=process.env.PORT || 3000
-// user: mdrashadul898
-// pass: xKMnvl7I8c6v68vV
 
 // middleware
 app.use(cors({
   origin:[
-    'the-career-maker-93e49.web.app',
-    'https://the-career-maker-93e49.firebaseapp.com'
+    'http://localhost:5173',
+
+    'https://hesitant-history.surge.sh',
+    'http://hesitant-history.surge.sh'
   
   ],
   credentials:true
@@ -36,7 +36,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     // const serviceCollection=client.db("carr").collection("services");
     const database = client.db("serviceDB");
@@ -141,8 +141,8 @@ app.get("/services",async(req,res)=>{
   })
 
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    // await client.db("admin").command({ ping: 1 });
+    // console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
