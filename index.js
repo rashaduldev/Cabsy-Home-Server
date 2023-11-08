@@ -75,7 +75,19 @@ app.get("/services",async(req,res)=>{
     const query={_id:new ObjectId(id)};
     const result = await serviceCollaction.deleteOne(query); 
     res.send(result);
-    
+  })
+  // user Update services
+  app.get("/services/:id",async(req,res)=>{
+    const id=req.params.id;
+    const query={_id:new ObjectId(id)};
+    const result = await serviceCollaction.findOne(query); 
+    res.send(result);
+  })
+  app.put("/services/:id",async(req,res)=>{
+    const id=req.params.id;
+    const query={_id:new ObjectId(id)};
+    const result = await serviceCollaction.findOne(query); 
+    res.send(result);
   })
 
   app.get('/service/:id', async(req, res) => {
