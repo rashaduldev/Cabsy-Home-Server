@@ -11,7 +11,11 @@ const port=process.env.PORT || 3000
 
 // middleware
 app.use(cors({
-  origin:['http://localhost:5173'],
+  origin:[
+    'the-career-maker-93e49.web.app',
+    'https://the-career-maker-93e49.firebaseapp.com'
+  
+  ],
   credentials:true
 }));
 app.use(express.json());
