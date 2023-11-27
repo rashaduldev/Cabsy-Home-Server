@@ -10,11 +10,10 @@ const port=process.env.PORT || 3000
 // middleware
 app.use(cors({
   origin:[
-    'http://localhost:5173',
-
-    'https://hesitant-history.surge.sh',
-    'http://hesitant-history.surge.sh'
-  
+    'http://localhost:5174',
+    
+    'https://odd-self.surge.sh',
+    'http://odd-self.surge.sh'
   ],
   credentials:true
 }));
